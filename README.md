@@ -1,4 +1,4 @@
-# A JS HTML Renderer
+# JS HTML Renderer
 
 A JS DSL for rendering HTML on the client or the server.
 
@@ -11,8 +11,9 @@ The JS HTML Renderer provides a concise syntax for writing HTML using JavaScript
 - Precompiled HTML.
 
 ## Table of Contents
-- Installation
-- Usage
+- [Installation](#installation)
+- [Usage](#usage)
+- [Custom HTML Tags](#custom-html-tags)
 
 ## Installation
 
@@ -80,9 +81,20 @@ console.log(html_text);
         </ul>
     </main>
 </body>
-
 </html>
 ```
-
-
-
+## Custom HTML Tags
+Custom HTML tags can be created by binding the name of the tag to the first argument of the sigil function.  The resulting HTML tag could be used as a [Custom Element](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements).
+### Import the sigil for creating custom HTML tags.
+```ts
+import { $ } from "js-html-renderer";
+```
+### Create a custom HTML element.
+```ts
+const my_custom_element = $.bind(null, 'my-custom-element');
+```
+### Render the custom element with an arbitrary class name and content and log it to the console.
+```ts
+console.log(my_custom_element({class:'custom-element'})('content').render());
+// <my-custom-element class="custom-element">content</my-custom-element>
+```

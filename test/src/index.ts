@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
-import { Template, doctype, html, head, body, main, ul, li } from "js-html-renderer";
+import { Template, doctype, html, head, body, main, ul, li, $ } from "js-html-renderer";
 
 const $the_time_is = Symbol('the_time_is');
 const $greetings = Symbol('greetings_fragment');
@@ -33,3 +33,7 @@ const html_text = template.render(
 );
 
 console.log(html_text);
+
+const my_custom_element = $.bind(null, 'my-custom-element');
+
+console.log(my_custom_element({class:'custom-element'})('content').render());
