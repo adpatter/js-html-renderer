@@ -84,8 +84,8 @@ console.log(html_text);
 </html>
 ```
 ## Custom HTML Tags
-Custom HTML tags can be created by binding the name of the tag to the first argument of the sigil function.  The resulting HTML tag could be used as a [Custom Element](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements).
-### Import the sigil for creating custom HTML tags.
+Custom HTML tags can be created by binding the name of the tag to the first argument of the Renderer's sigil function.  The resulting HTML tag could be used as a [Custom Element](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements).
+### Import the Renderer's sigil function for creating custom HTML tags.
 ```ts
 import { $ } from "js-html-renderer";
 ```
@@ -93,8 +93,8 @@ import { $ } from "js-html-renderer";
 ```ts
 const my_custom_element = $.bind(null, 'my-custom-element');
 ```
-### Render the custom element with an arbitrary class name and content and log it to the console.
+### Render the custom element with the class name `custom-element` and string "Hello, World!" for content and log it to the console.
 ```ts
-console.log(my_custom_element({class:'custom-element'})('content').render());
-// <my-custom-element class="custom-element">content</my-custom-element>
+console.log(my_custom_element({ class: 'custom-element' })('Hello, World!').render());
+// <my-custom-element class="custom-element">Hello, World!</my-custom-element>
 ```

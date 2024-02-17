@@ -36,4 +36,4 @@ console.log(html_text);
 
 const my_custom_element = $.bind(null, 'my-custom-element');
 
-console.log(my_custom_element({class:'custom-element'})('content').render());
+console.log(my_custom_element({ class: 'custom-element' })('Hello, World!').render());
