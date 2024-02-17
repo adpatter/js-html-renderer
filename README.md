@@ -23,7 +23,7 @@ const template: Template = doctype()(
 
 ### Features
 - An intuitive and concise syntax.
-- Create your own custom HTML tags.
+- Create your own custom HTML tags (i.e., for [Custom Elements](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements)).
 - Precompiled HTML.
 
 ## Table of Contents
