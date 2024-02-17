@@ -20,8 +20,10 @@ const template: Template = doctype()(
     )
 );
 
+const hello_world = ['Hello, World!', 'Saluton, Mondo!'];
+
 const greetings = ul({ id: 'greetings' })(
-    ['Hello, World!', 'Saluton, Mondo!'].map(
+    hello_world.map(
         (greeting: string, index: number) => li({ id: `greeting-${index}` })(greeting)
     )
 );

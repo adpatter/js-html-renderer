@@ -25,6 +25,7 @@ const template: Template = doctype()(
 - An intuitive and concise syntax.
 - Create your own custom HTML tags (i.e., for [Custom Elements](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements)).
 - Use the prettier of your choice for beautifying your HTML.
+
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
@@ -44,7 +45,7 @@ import { Template, doctype, html, head, body, main, ul, li } from "js-html-rende
 ```
 ### Create Symbols for dynamic content.
 ```ts
-const $greetings = Symbol('greetings_fragment');
+const $greetings = Symbol('greetings');
 ```
 ### Create an HTML template.
 You will use the Symbol created above in order to designate where dynamic content will be inserted.
@@ -63,8 +64,10 @@ const template: Template = doctype()(
 ```
 ### Create an HTML list of greetings using JavaScript.
 ```ts
+const hello_world = ['Hello, World!', 'Saluton, Mondo!'];
+
 const greetings = ul({ id: 'greetings' })(
-    ['Hello, World!', 'Saluton, Mondo!'].map(
+    hello_world.map(
         (greeting: string, index: number) => li({ id: `greeting-${index}` })(greeting)
     )
 );
