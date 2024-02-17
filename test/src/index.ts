@@ -20,21 +20,21 @@ const template: Template = doctype()(
     )
 );
 
-const hello_world = ['Hello, World!', 'Saluton, Mondo!'];
+const helloWorld = ['Hello, World!', 'Saluton, Mondo!'];
 
 const greetings = ul({ id: 'greetings' })(
-    hello_world.map(
+    helloWorld.map(
         (greeting: string, index: number) => li({ id: `greeting-${index}` })(greeting)
     )
 );
 
-const html_text = template.render(
+const htmlText = template.render(
     {
-        [$greetings]: greetings,
+        [$greetings]: greetings
     }
 );
 
-console.log(html_text);
+console.log(htmlText);
 
 const my_custom_element = $.bind(null, 'my-custom-element');
 

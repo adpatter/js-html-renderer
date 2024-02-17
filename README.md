@@ -39,6 +39,7 @@ npm install js-html-renderer
 
 ## Usage
 In this example you will create an HTML document that contains greetings in English and Esperanto.
+
 ### Import typings and relevant tags.
 ```ts
 import { Template, doctype, html, head, body, main, ul, li } from "js-html-renderer";
@@ -64,10 +65,10 @@ const template: Template = doctype()(
 ```
 ### Create an HTML list of greetings using JavaScript.
 ```ts
-const hello_world = ['Hello, World!', 'Saluton, Mondo!'];
+const helloWorld = ['Hello, World!', 'Saluton, Mondo!'];
 
 const greetings = ul({ id: 'greetings' })(
-    hello_world.map(
+    helloWorld.map(
         (greeting: string, index: number) => li({ id: `greeting-${index}` })(greeting)
     )
 );
@@ -75,16 +76,16 @@ const greetings = ul({ id: 'greetings' })(
 ### Inject the dynamic content and render the HTML.
 Use `template.render` in order to inject the unordered HTML list of `greetings` created above into the template.
 ```ts
-const html_text = template.render(
+const htmlText = template.render(
     {
-        [$greetings]: greetings,
+        [$greetings]: greetings
     }
 );
 
 ```
-### Log the result.
+### Log the result to the console.
 ```ts
-console.log(html_text);
+console.log(htmlText);
 ```
 #### The resulting HTML (formatted for clarity).
 ```html
@@ -101,8 +102,10 @@ console.log(html_text);
 </body>
 </html>
 ```
+
 ## Custom HTML Tags
 Custom HTML tags can be created by binding the name of the tag to the first argument of the Renderer's sigil function.  The resulting HTML tag could be used as a [Custom Element](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements).
+
 ### Import the Renderer's sigil function for creating custom HTML tags.
 ```ts
 import { $ } from "js-html-renderer";
