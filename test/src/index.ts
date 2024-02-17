@@ -2,12 +2,10 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
-import { Template, doctype, html, head, body, ul, li } from "js-html-renderer";
+import { Template, doctype, html, head, body, main, ul, li } from "js-html-renderer";
 
 const $the_time_is = Symbol('the_time_is');
-const $greetings_fragment = Symbol('greetings_fragment');
-
-const greetings = ['Hello', 'Saluton'];
+const $greetings = Symbol('greetings_fragment');
 
 const template: Template = doctype()(
     html()(
@@ -15,22 +13,23 @@ const template: Template = doctype()(
 
         ),
         body()(
-            $greetings_fragment
+            main({ id: 'main' })(
+                $greetings
+            )
         )
     )
 );
 
-const greetings_fragment = ul({ id: 'greetings' })(
-    greetings.map(
-        (greeting: string) => li()(greeting)
+const greetings = ul({ id: 'greetings' })(
+    ['Hello, World!', 'Saluton, Mondo!'].map(
+        (greeting: string, index: number) => li({ id: `greeting-${index}` })(greeting)
     )
 );
 
-const result = template.render(
+const html_text = template.render(
     {
-        [$greetings_fragment]: greetings_fragment,
-        [$the_time_is]: new Date().toUTCString()
+        [$greetings]: greetings,
     }
 );
 
-console.log(result);
+console.log(html_text);
