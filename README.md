@@ -14,7 +14,7 @@ const template: Template = doctype()(
         ),
         body()(
             main({ id: 'main' })(
-                $greetings // Dynamic content may be injected whereever there is a Symbol.
+                $greetings // Dynamic content may be injected wherever there is a Symbol.
             )
         )
     )
