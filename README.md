@@ -83,7 +83,8 @@ const helloWorld = ['Saluton, Mondo!', 'Hello, World!'];
 const greetings = ul({ id: 'greetings' })(
     helloWorld.map(
         (greeting: string, index: number) => li({ id: `greeting-${index}` })(greeting)
-            // This is an HTML `li` element. ⮵ It will contain the specified `id` attribute.
+            // This is an HTML `li` element. ⮵ 
+            // Each `li` element will contain its respective `id` attribute.
     ) 
 );
 ```
