@@ -67,6 +67,7 @@ const template: Template = doctype()(
         body()(
             main({ id: 'main-content' })(
                 $greetings
+                // ⮴ You will insert an unordered list of greetings here.
             )
         )
     )
