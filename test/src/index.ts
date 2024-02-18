@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
-import { Template, doctype, html, head, body, main, ul, li, $ } from "js-html-renderer";
+import { Template, doctype, html, head, title, script, body, main, p, ul, li, $ } from "js-html-renderer";
 
 const $the_time_is = Symbol('the_time_is');
 const $greetings = Symbol('greetings_fragment');
@@ -10,11 +10,14 @@ const $greetings = Symbol('greetings_fragment');
 const template: Template = doctype()(
     html()(
         head()(
-
+            title()('Title'),
+            script({'src':'script.js'})()
         ),
         body()(
             main({ id: 'main-content' })(
-                $greetings
+                p()(
+                    $greetings // Dynamic content may be injected wherever there is a Symbol.
+                )
             )
         )
     )

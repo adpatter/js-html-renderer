@@ -69,7 +69,6 @@ export class Template {
         }
     }
 
-
     public collect(...args: Nodes): Template {
         if (this.children) {
             args = args.flat();

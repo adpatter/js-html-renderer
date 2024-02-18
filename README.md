@@ -5,16 +5,20 @@ A JS DSL for rendering HTML on the client or the server.
 ## Introduction
 The JS HTML Renderer provides a concise and intuitive syntax for writing HTML using JavaScript.  You can use the Renderer in order to create a static template and inject dynamic content into it.  JS [Symbols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol) are used in order to designate where dynamic content will be inserted.
 
-The Renderer's syntax is intuitive and concise:
+The Renderer's syntax is intuitive and concise e.g.,
 
 ```ts
 const template: Template = doctype()(
     html()(
         head()(
+            title()('Title'),
+            script({'src':'script.js'})()
         ),
         body()(
             main({ id: 'main-content' })(
-                $greetings // Dynamic content may be injected wherever there is a Symbol.
+                p()(
+                    $greetings // Dynamic content may be injected wherever there is a Symbol.
+                )
             )
         )
     )
