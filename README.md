@@ -84,6 +84,13 @@ const greetings = ul({ id: 'greetings' })(
     )
 );
 ```
+#### The greetings HTML fragement looks like this:
+```html
+<ul id="greetings">
+    <li id="greeting-0">Saluton, Mondo!</li>
+    <li id="greeting-1">Hello, World!</li>
+</ul>
+```
 ### Inject the dynamic content and render the HTML.
 You use `template.render` in order to inject the unordered HTML list of `greetings` created above into the template.
 ```ts
