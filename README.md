@@ -12,14 +12,14 @@ const template: Template = doctype()(
     html()(
         head()(
             title()('The Title'),
-                    // ⮴ Elements may contain text nodes or other elements.
+                    // ⮴ The element collection may contain text nodes or other elements.
             script({ src: 'script.js' })()
                     // ⮴ Attributes are defined using key-value pairs.
         ),
         body()(
             main({ id: 'main-content' })(
                 br(),
-                // ⮴ Void elements lack node collection parens.
+                // ⮴ Void elements lack parens for a node collection.
                 p()(
                     $greetings // 🢤 `$greetings` is a JS Symbol.
                     // ⮴ Dynamic content may be injected wherever there is a Symbol.
