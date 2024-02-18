@@ -20,7 +20,7 @@ const template: Template = doctype()(
     )
 );
 
-const helloWorld = ['Hello, World!', 'Saluton, Mondo!'];
+const helloWorld = ['Saluton, Mondo!', 'Hello, World!'];
 
 const greetings = ul({ id: 'greetings' })(
     helloWorld.map(

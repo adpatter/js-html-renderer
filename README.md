@@ -94,10 +94,10 @@ console.log(htmlText);
 <html>
 <head></head>
 <body>
-    <main id="main">
+    <main id="main-content">
         <ul id="greetings">
-            <li id="greeting-0">Hello, World!</li>
-            <li id="greeting-1">Saluton, Mondo!</li>
+            <li id="greeting-0">Saluton, Mondo!</li>
+            <li id="greeting-1">Hello, World!</li>
         </ul>
     </main>
 </body>
