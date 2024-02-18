@@ -10,8 +10,8 @@ const $greetings = Symbol('greetings_fragment');
 const template: Template = doctype()(
     html()(
         head()(
-            title()('Title'),
-            script({'src':'script.js'})()
+            title()('The Title'),
+            script({ 'src': 'script.js' })()
         ),
         body()(
             main({ id: 'main-content' })(

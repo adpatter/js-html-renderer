@@ -11,14 +11,13 @@ The Renderer's syntax is intuitive and concise e.g.,
 const template: Template = doctype()(
     html()(
         head()(
-            title()('Title'),
-            script({'src':'script.js'})()
+            title()('The Title'),
+            script({ 'src': 'script.js' })()
         ),
         body()(
             main({ id: 'main-content' })(
                 p()(
-                    // Dynamic content may be injected wherever there is a Symbol.
-                    $greetings
+                    $greetings // Dynamic content may be injected wherever there is a Symbol.
                 )
             )
         )
