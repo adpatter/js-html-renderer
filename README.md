@@ -33,11 +33,13 @@ const template: Template = doctype()(
 ### Features
 - An intuitive and concise syntax.
 - Create your own custom HTML tags (i.e., for [Custom Elements](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements)).
+- Performant prerendering.
 - Use the prettier of your choice for beautifying your HTML.
 
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
+- [Performance](#performance)
 - [Custom HTML Tags](#custom-html-tags)
 
 ## Installation
@@ -120,6 +122,26 @@ console.log(htmlText);
     </main>
 </body>
 </html>
+```
+## Performance
+### Prerendering
+HTML is prerendered at the time the Template is created.  The HTML elements are concatenated into a string separated by just the Symbolic dynamic components of the Template.  For example, in the Template below, all the HTML elements, including the `footer`, are prerendered at the time of Template creation.  This means that the Template may be reused without having to reconstruct the HTML elements that comprise it at each use.
+
+The final render step, invoked using the `template.render` method, involves just a final concatenation of the prerenderd HTML and the dynamic content.
+
+```ts
+const template: Template = doctype()(
+    html()(
+        head()(
+        ),
+        body()(
+            main({ id: 'main-content' })(
+                $greetings
+            ),
+            footer({id: 'footer'})()
+        )
+    )
+);
 ```
 
 ## Custom HTML Tags
