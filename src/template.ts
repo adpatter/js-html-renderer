@@ -42,27 +42,29 @@ export class Template {
 
     public render(symbols?: { [key: symbol]: string | Template }): string {
         if (this.children) {
+            // A copy of `this.children` is made in order to ensure it is stateless.
+            const children = [...this.children];
             if (symbols) {
-                for (let i = 0; i < this.children?.length; i++) {
-                    const child = this.children[i];
+                for (let i = 0; i < children?.length; i++) {
+                    const child = children[i];
                     if (typeof child == 'symbol') {
                         let value = symbols[child];
                         if (value) {
                             if (value instanceof Template) {
                                 value = value.render();
-                                this.children[i] = value;
+                                children[i] = value;
                             }
                             else if (typeof value == 'string') {
-                                this.children[i] = value;
+                                children[i] = value;
                             }
                         }
                         else {
-                            this.children[i] = '';
+                            children[i] = '';
                         }
                     }
                 }
             }
-            return this.startTag + this.children.join('') + this.endTag;
+            return this.startTag + children.join('') + this.endTag;
         }
         else {
             return '';
