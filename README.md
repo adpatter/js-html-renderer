@@ -47,7 +47,7 @@ npm install js-html-renderer
 ```
 
 ## Usage
-In this example you will create an HTML document that contains greetings in English and Esperanto.
+In this example you will create an HTML document that contains greetings in Esperanto and English.
 
 ### Import typings and relevant tags.
 ```ts
