@@ -84,7 +84,7 @@ const greetings = ul({ id: 'greetings' })(
     )
 );
 ```
-#### The greetings HTML fragement looks like this:
+#### The `greetings` HTML fragment looks like this:
 ```html
 <ul id="greetings">
     <li id="greeting-0">Saluton, Mondo!</li>
