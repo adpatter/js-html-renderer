@@ -18,6 +18,8 @@ const template: Template = doctype()(
         ),
         body()(
             main({ id: 'main-content' })(
+                br(),
+                // ⮴ Void elements lack the additional parens for the node collection.
                 p()(
                     $greetings
                     // ⮴ Dynamic content may be injected wherever there is a Symbol.
