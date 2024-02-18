@@ -12,7 +12,7 @@ const template: Template = doctype()(
     html()(
         head()(
             title()('The Title'),
-                    // ⮴ The element collection may contain text nodes or other elements.
+                    // ⮴ The element collection may contain text nodes or elements.
             script({ src: 'script.js' })()
                     // ⮴ Attributes are defined using key-value pairs.
         ),
@@ -126,9 +126,11 @@ console.log(htmlText);
 ```
 ## Performance
 ### Prerendering
-HTML is prerendered at the time the `Template` is created.  The HTML elements are concatenated into a string separated by just the Symbolic dynamic components of the `Template`.  For example, in the `Template` below, all the HTML elements, including the `footer`, are prerendered at the time of `Template` creation.  This means that the `Template` may be reused without having to reconstruct the HTML elements that comprise it at each use.
+HTML is prerendered at the time the `Template` is created.  The HTML elements are concatenated into a string separated by just the Symbolic dynamic components of the `Template`.  
 
-The final render step, invoked using the `template.render` method, involves just a final concatenation of the prerenderd HTML and the dynamic content.
+For example, in the `Template` below, all the HTML elements, including the `footer`, are prerendered at the time of `Template` creation.  This means that the `Template` may be reused without having to reconstruct the HTML elements that comprise it at each use.
+
+The final render step, invoked using the `template.render` method, involves just injection of dynamic content and a final concatenation of the prerenderd HTML.
 
 ```ts
 const template: Template = doctype()(
@@ -148,19 +150,21 @@ const template: Template = doctype()(
 ## Custom HTML Tags
 Custom HTML tags can be created by binding the name of the tag to the first argument of the Renderer's sigil function.  The resulting HTML tag can be used as a [Custom Element](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements).
 
-### Import the Renderer's sigil function for creating custom HTML tags.
+### Example
+
+#### Import the Renderer's sigil function for creating custom HTML tags.
 ```ts
 import { $ } from "js-html-renderer";
 ```
-### Create a custom HTML element.
+#### Create a custom HTML element.
 ```ts
 const my_custom_element = $.bind(null, 'my-custom-element');
 ```
-### Render the custom element with the class name `custom-element` and content "Hello, World!" and log it to the console.
+#### Render the custom element with the class name `custom-element` and content "Hello, World!" and log it to the console.
 ```ts
 console.log(my_custom_element({ class: 'custom-element' })('Hello, World!').render());
 ```
-#### Output
+##### Output
 ```html
 <my-custom-element class="custom-element">Hello, World!</my-custom-element>
 ```
