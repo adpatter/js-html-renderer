@@ -1,7 +1,7 @@
 import { NotImplementedError } from "./errors";
 import { attributeName, attributeValue, preamble, tagName } from "./regexes";
 
-type Nodes = Array<string | Template | symbol | typeof Template.prototype.collect | Nodes>;
+type Nodes = Array<string | Template | symbol | ((...args: Nodes) => Template)  | Nodes>;
 
 export class Template {
 

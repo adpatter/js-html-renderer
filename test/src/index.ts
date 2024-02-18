@@ -32,6 +32,8 @@ const greetings = ul({ id: 'greetings' })(
     )
 );
 
+console.log(greetings.render());
+
 const htmlText = template.render(
     {
         [$greetings]: greetings
