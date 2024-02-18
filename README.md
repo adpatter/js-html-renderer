@@ -171,16 +171,17 @@ console.log(my_custom_element({ class: 'custom-element' })('Hello, World!').rend
 ```
 ## "Hello, World!" Example
 
-In this example you will create an HTTP server that listens on port 3000 and serves dynamic content.  This example is based on the `Usage` example shown above.
+In this example you will create a multi-lingual Greeter application. You will create an HTTP server that listens on port 3000 and serves dynamic content that contains greetings from around the world.  Please see the [Hello, World!](https://github.com/faranalytics/js-html-renderer/tree/main/examples/hello_world) example for a working implementation.
 
-### Import Node's native HTTP server, the `Template` type, and relevant HTML tags.
+### Import Node's native HTTP server, the `Template` type, relevant HTML tags, and a dictionary of "Hello, World!" greetings.
 ```ts
 import * as http from "node:http";
-import { Template, doctype, html, head, title, script, link, body, main, ul, li, footer } from "js-html-renderer";
+import { Template, doctype, html, head, title, script, link, body, main, section, h1, ul, li, footer } from "js-html-renderer";
+import { worlds } from "./hello_worlds.js";
 ```
 
-### Create the `Symbol` variables and `Template`.
-The 
+### Create the `Symbol` variables and the `Template`.
+Dynamic content will be injected into the `Template` at each `Symbol` on each request.
 ```ts
 const $main_content = Symbol('main_content');
 const $title = Symbol('title');
@@ -204,4 +205,58 @@ const template: Template = doctype()(
         )
     )
 );
+```
+
+### Create a function to be rendered in an inline script element.
+```ts
+function sayHello() {
+    alert('Hello, World!');
+}
+```
+
+### Create the web application.
+```ts
+http.createServer((req: http.IncomingMessage, res: http.ServerResponse) => {
+    if (req.url == '/') {
+        // Create an unordered list of greetings.
+        const greetings = ul({ id: 'content' })(
+            Object.values(worlds).map(
+                (greeting: string, index: number) => li({ id: `greeting-${index}`, class: 'greetings' })(
+                    greeting
+                )
+            )
+        );
+        // Create the content for the main section and add an inline `click` handler to the `section` element.
+        const html_main_content = section({ 'onClick': 'sayHello();' })(
+            h1()('Greetings from Around the World!'),
+            greetings
+        );
+        // Create a Title element.
+        const html_title = title({ id: 'title' })('The Title');
+        // Create a Script element.
+        const html_script = script({ src: './script.js' })();
+        // Create a Link element for a stylesheet.
+        const html_stylesheet = link({ rel: "stylesheet", href: "styles.css" })();
+        //Create an inline script.
+        const inline_script = script()(
+            sayHello.toString()
+        );
+
+        // Inject the dynamic materials into the `Template`.
+        const htmlText = template.render(
+            {
+                [$title]: html_title,
+                [$style_sheet]: html_stylesheet,
+                [$script]: html_script,
+                [$inline_script]: inline_script,
+                [$main_content]: html_main_content
+            }
+        );
+        res.setHeader('Content-Type', 'text/html; charset=utf-8');
+        res.end(htmlText);
+    }
+    else {
+        res.writeHead(404, '').end();
+    }
+}).listen(3000);
 ```
