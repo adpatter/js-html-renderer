@@ -231,13 +231,13 @@ http.createServer((req: http.IncomingMessage, res: http.ServerResponse) => {
             h1()('Greetings from Around the World!'),
             greetings
         );
-        // Create a Title element.
+        // Create a title element.
         const html_title = title({ id: 'title' })('The Title');
-        // Create a Script element.
+        // Create a script element.
         const html_script = script({ src: './script.js' })();
-        // Create a Link element for a stylesheet.
+        // Create a link element for a stylesheet.
         const html_stylesheet = link({ rel: "stylesheet", href: "styles.css" })();
-        //Create an inline script.
+        //Create an inline script element.
         const inline_script = script()(
             sayHello.toString()
         );
@@ -260,7 +260,7 @@ http.createServer((req: http.IncomingMessage, res: http.ServerResponse) => {
     }
 }).listen(3000);
 ```
-#### Output
+#### Output:
 # Greetings from Around the World!
 - Saluton, Mondo!
 - Hello Wêreld!
