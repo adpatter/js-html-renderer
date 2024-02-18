@@ -21,7 +21,7 @@ const template: Template = doctype()(
                 br(),
                 // ⮴ Void elements lack additional parens for the node collection.
                 p()(
-                    $greetings
+                    $greetings // 🢤 `$greetings` is a JS Symbol.
                     // ⮴ Dynamic content may be injected wherever there is a Symbol.
                 )
             )
