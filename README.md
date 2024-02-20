@@ -80,7 +80,7 @@ const template: Template = doctype()(
 ```
 
 ### Create an HTML list of greetings using JavaScript.
-You use JavaScript and the Renderer's HTML elements in order to produce dynamic content.  In this example we use `Array.prototype.map` in order to map the elements of `helloWorld` into a list of `li` elements.
+You use JavaScript and the Renderer's HTML elements in order to produce dynamic content.  In this example you use `Array.prototype.map` in order to map the elements of `helloWorld` into a list of `li` elements.
 ```ts
 const helloWorld = ['Saluton, Mondo!', 'Hello, World!'];
 
