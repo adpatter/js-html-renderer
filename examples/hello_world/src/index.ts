@@ -30,7 +30,7 @@ function sayHello() {
     alert('Hello, World!');
 }
 
-http.createServer((req: http.IncomingMessage, res: http.ServerResponse) => {
+const server = http.createServer((req: http.IncomingMessage, res: http.ServerResponse) => {
     if (req.url == '/') {
         // Create an unordered list of greetings.
         const greetings = ul({ id: 'content' })(
@@ -74,3 +74,5 @@ http.createServer((req: http.IncomingMessage, res: http.ServerResponse) => {
         res.writeHead(404, '').end();
     }
 }).listen(3000, '127.0.0.1');
+
+server.on('listening', ()=>console.log('Listening on: http://127.0.0.1:3000/'));
