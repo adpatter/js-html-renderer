@@ -57,7 +57,7 @@ In this example you will create an HTML document that contains greetings in Espe
 import { Template, doctype, html, head, body, main, ul, li } from "js-html-renderer";
 ```
 
-### Create a `Symbol` variable for dynamic content.
+### Create a `Symbol` variable for injection of dynamic content.
 ```ts
 const $greetings = Symbol('greetings');
 ```
@@ -93,7 +93,7 @@ const greetings = ul({ id: 'greetings' })(
 );
 ```
 
-#### The `greetings` HTML fragment looks like this:
+#### The `greetings` HTML fragment looks like this when rendered (formatted for clarity):
 ```html
 <ul id="greetings">
     <li id="greeting-0">Saluton, Mondo!</li>
@@ -193,7 +193,7 @@ import { worlds } from "./hello_worlds.js";
 ```
 
 ### Create the `Symbol` variables and the `Template`.
-Dynamic content will be injected into the `Template` at each `Symbol` on each request.
+Dynamic content will be injected into the `Template` at its respective `Symbol` on each request.
 ```ts
 const $main_content = Symbol('main_content');
 const $title = Symbol('title');
