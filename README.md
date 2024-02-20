@@ -127,11 +127,11 @@ console.log(htmlText);
 ```
 ## Performance
 ### Prerendering
-HTML is prerendered at the time the `Template` is created.  The HTML elements are concatenated into a string separated by just the dynamic components of the `Template` i.e., the parts represented by JavaScript Symbols.  
+HTML is prerendered at the time the root `Template` object is created.  The resulting `Template` object contains an array of prerendered HTML elements and JavaScript Symbols.
 
-For example, in the `Template` below, all the HTML elements, including the `footer`, are prerendered at the time of `Template` creation.  This means that the `Template` may be reused without having to reconstruct the HTML elements that comprise it at each use.
+For example, in the `Template` below, all the HTML elements, including the `footer`, are prerendered at the time the `Template` is created.  This means that the `Template` may be reused without having to reconstruct the HTML elements that comprise it.
 
-The final render step, invoked using the `template.render` method, involves just injection of dynamic content and a final concatenation of the prerenderd HTML.
+The final render step, invoked using `template.render`, involves just a single pass in order to swap out the Symbols with dynamic content and concatenation of the resulting HTML.
 
 ```ts
 const template: Template = doctype()(
