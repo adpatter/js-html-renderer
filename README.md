@@ -157,10 +157,12 @@ Custom HTML tags can be created by binding the name of the tag to the first argu
 ```ts
 import { $ } from "js-html-renderer";
 ```
+
 #### Create a custom HTML tag named `my-custom-element`.
 ```ts
 const my_custom_element = $.bind(null, 'my-custom-element');
 ```
+
 #### Render the custom element with the class name `custom-element` and content "Hello, World!" and log it to the console.
 ```ts
 console.log(my_custom_element({ class: 'custom-element' })('Hello, World!').render());
@@ -169,6 +171,7 @@ console.log(my_custom_element({ class: 'custom-element' })('Hello, World!').rend
 ```html
 <my-custom-element class="custom-element">Hello, World!</my-custom-element>
 ```
+
 ## "Hello, World!" Example
 
 In this example you will create a multi-lingual Greeter application. You will create an HTTP server that listens on port 3000 and serves dynamic content that contains greetings from around the world.  Please see the [Hello, World!](https://github.com/faranalytics/js-html-renderer/tree/main/examples/hello_world) example for a working implementation.
