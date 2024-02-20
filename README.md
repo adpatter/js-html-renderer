@@ -56,10 +56,12 @@ In this example you will create an HTML document that contains greetings in Espe
 ```ts
 import { Template, doctype, html, head, body, main, ul, li } from "js-html-renderer";
 ```
+
 ### Create a `Symbol` variable for dynamic content.
 ```ts
 const $greetings = Symbol('greetings');
 ```
+
 ### Create an HTML `Template`.
 You will use the `Symbol` created above in order to designate where dynamic content will be inserted.
 ```ts
@@ -76,6 +78,7 @@ const template: Template = doctype()(
     )
 );
 ```
+
 ### Create an HTML list of greetings using JavaScript.
 You use JavaScript and the Renderer's HTML elements in order to produce dynamic content.  In this example we use `Array.prototype.map` in order to map the elements of `helloWorld` into a list of `li` elements.
 ```ts
@@ -89,6 +92,7 @@ const greetings = ul({ id: 'greetings' })(
     ) 
 );
 ```
+
 #### The `greetings` HTML fragment looks like this:
 ```html
 <ul id="greetings">
@@ -96,6 +100,7 @@ const greetings = ul({ id: 'greetings' })(
     <li id="greeting-1">Hello, World!</li>
 </ul>
 ```
+
 ### Inject the dynamic content and render the HTML.
 You use `template.render` in order to inject the unordered HTML list of `greetings` created above into the `Template`.
 ```ts
@@ -106,10 +111,12 @@ const htmlText = template.render(
 );
 
 ```
+
 ### Log the result to the console.
 ```ts
 console.log(htmlText);
 ```
+
 #### The resulting HTML (formatted for clarity).
 ```html
 <!DOCTYPE html>
@@ -125,7 +132,9 @@ console.log(htmlText);
 </body>
 </html>
 ```
+
 ## Performance
+
 ### Prerendering
 HTML is prerendered at the time the root `Template` object is created.  The resulting `Template` object contains an array of prerendered HTML elements and JavaScript Symbols.
 
