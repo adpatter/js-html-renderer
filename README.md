@@ -129,7 +129,7 @@ console.log(htmlText);
 ### Prerendering
 HTML is prerendered at the time the root `Template` object is created.  The resulting `Template` object contains an array of prerendered HTML elements and JavaScript Symbols.
 
-For example, in the example shown below, all the HTML elements, including the `footer`, are prerendered at the time the `Template` is created.  This means that the `Template` may be reused without having to reconstruct the HTML elements that comprise it.
+For example, in the implementation shown below, all the HTML elements, including the `footer`, are prerendered at the time the `Template` is created.  This means that the `Template` may be reused without having to reconstruct the HTML elements that comprise it.
 
 The final render step, invoked using `template.render`, involves a single pass over the elements of the array in order to swap out the Symbols with dynamic content and, finally, a concatenation of the resulting HTML.
 
