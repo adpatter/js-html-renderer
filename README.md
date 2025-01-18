@@ -214,7 +214,12 @@ In this hypothetical example you will create a multi-lingual Greeter application
 
 ### Instructions
 
-#### Import Node's native HTTP server, the `Template` type, relevant HTML tags, and a dictionary of "Hello, World!" greetings.
+#### Import the dependecies:
+
+- Node's native HTTP server
+- The `Template` type
+- Relevant HTML tags
+- A dictionary of "Hello, World!" greetings
 
 ```ts
 import * as http from "node:http";
