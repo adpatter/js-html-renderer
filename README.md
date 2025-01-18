@@ -38,7 +38,7 @@ const template: Template = doctype()(
 - Performant [prerendering](#prerendering).
 - Use the prettier of your choice for beautifying your HTML.
 
-## Table of Contents
+## Table of contents
 
 - [Installation](#installation)
 - [Usage](#usage)
@@ -176,7 +176,7 @@ const template: Template = doctype()(
 );
 ```
 
-## Custom HTML Tags
+## Custom HTML tags
 
 Custom HTML tags can be created by binding the name of the tag to the first argument of the Renderer's sigil function. The resulting HTML tag can be used as a [Custom Element](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements).
 
@@ -208,7 +208,7 @@ console.log(
 <my-custom-element class="custom-element">Hello, World!</my-custom-element>
 ```
 
-## "Hello, World!" Example
+## "Hello, World!" example
 
 In this hypothetical example you will create a multi-lingual Greeter application. You will create an HTTP server that listens on port 3000 and serves dynamic content that contains greetings from around the world. Please see the [Hello, World!](https://github.com/faranalytics/js-html-renderer/tree/main/examples/hello_world) example for a working implementation.
 
