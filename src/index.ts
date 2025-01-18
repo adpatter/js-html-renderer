@@ -1,3 +1,3 @@
 export * from './sigil';
 export * from './tags';
-export * from "./template";
+export * from './template';

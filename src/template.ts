@@ -1,5 +1,5 @@
-import { NotImplementedError } from "./errors";
-import { attributeName, attributeValue, preamble, tagName } from "./regexes";
+import { NotImplementedError } from './errors';
+import { attributeName, attributeValue, preamble, tagName } from './regexes';
 
 type Nodes = Array<string | Template | symbol | ((...args: Nodes) => Template)  | Nodes>;
 

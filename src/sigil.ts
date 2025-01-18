@@ -1,4 +1,4 @@
-import { Template } from "./template";
+import { Template } from './template';
 
 export function $(name: string, attr?: { [key: string]: string }): typeof Template.prototype.collect {
 
