@@ -57,7 +57,7 @@ npm install js-html-renderer
 
 In this example you will create an HTML document that contains greetings in Esperanto and English.
 
-### Implement the \`index.ts\` module
+### Implement the `index.ts` module
 
 #### Import typings and relevant tags.
 
@@ -74,13 +74,13 @@ import {
 } from "js-html-renderer";
 ```
 
-#### Create a \`Symbol\` variable for injection of dynamic content.
+#### Create a `Symbol` variable for injection of dynamic content.
 
 ```ts
 const $greetings = Symbol("greetings");
 ```
 
-#### Create an HTML \`Template\`.
+#### Create an HTML `Template`.
 
 You will use the `Symbol` created above in order to designate where dynamic content will be inserted.
 
@@ -115,7 +115,7 @@ const greetings = ul({ id: "greetings" })(
 );
 ```
 
-##### The \`greetings\` HTML fragment looks like this when rendered (formatted for clarity):
+##### The `greetings` HTML fragment looks like this when rendered (formatted for clarity):
 
 ```html
 <ul id="greetings">
@@ -188,13 +188,13 @@ Custom HTML tags can be created by binding the name of the tag to the first argu
 import { $ } from "js-html-renderer";
 ```
 
-#### Create a custom HTML tag named \`my-custom-element\`.
+#### Create a custom HTML tag named `my-custom-element`.
 
 ```ts
 const my_custom_element = $.bind(null, "my-custom-element");
 ```
 
-#### Render the custom element with the class name \`custom-element\` and content "Hello, World!" and log it to the console.
+#### Render the custom element with the class name `custom-element` and content "Hello, World!" and log it to the console.
 
 ```ts
 console.log(
@@ -212,7 +212,7 @@ console.log(
 
 In this hypothetical example you will create a multi-lingual Greeter application. You will create an HTTP server that listens on port 3000 and serves dynamic content that contains greetings from around the world. Please see the [Hello, World!](https://github.com/faranalytics/js-html-renderer/tree/main/examples/hello_world) example for a working implementation.
 
-### Implement the \`index.ts\` module
+### Implement the `index.ts` module
 
 #### Import the dependecies.
 
@@ -242,7 +242,7 @@ import {
 import { worlds } from "./hello_worlds.js";
 ```
 
-#### Create the \`Symbol\` variables and the \`Template\`.
+#### Create the `Symbol` variables and the `Template`.
 
 Dynamic content will be injected into the `Template` at its respective `Symbol` on each request.
 
