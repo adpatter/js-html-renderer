@@ -1,6 +1,6 @@
-import * as http from "node:http";
-import { Template, doctype, html, head, title, script, link, body, main, section, h1, ul, li, footer } from "js-html-renderer";
-import { worlds } from "./hello_worlds.js";
+import * as http from 'node:http';
+import { Template, doctype, html, head, title, script, link, body, main, section, h1, ul, li, footer } from 'js-html-renderer';
+import { worlds } from './hello_worlds.js';
 
 const $html_main_content = Symbol('main_content');
 const $html_title = Symbol('title');
@@ -50,7 +50,7 @@ const server = http.createServer((req: http.IncomingMessage, res: http.ServerRes
         // Create a Script element.
         const html_script = script({ src: './script.js' })();
         // Create a Link element for a stylesheet.
-        const html_stylesheet = link({ rel: "stylesheet", href: "styles.css" });
+        const html_stylesheet = link({ rel: 'stylesheet', href: 'styles.css' });
         //Create an inline script.
         const html_inline_script = script()(
             sayHello.toString()
