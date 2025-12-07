@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/faranalytics/js-html-renderer.git"
+    "url": "git+https://github.com/adpatter/js-html-renderer.git"
   },
   "author": "FAR",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/faranalytics/js-html-renderer/issues"
+    "url": "https://github.com/adpatter/js-html-renderer/issues"
   },
-  "homepage": "https://github.com/faranalytics/js-html-renderer#readme",
+  "homepage": "https://github.com/adpatter/js-html-renderer#readme",
   "engines": {
     "npm": ">=10.2.3",
     "node": ">=18.19.0"
