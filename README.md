@@ -62,16 +62,7 @@ In this example you will create an HTML document that contains greetings in Espe
 #### Import typings and relevant tags.
 
 ```ts
-import {
-  Template,
-  doctype,
-  html,
-  head,
-  body,
-  main,
-  ul,
-  li,
-} from "js-html-renderer";
+import { Template, doctype, html, head, body, main, ul, li } from "js-html-renderer";
 ```
 
 #### Create a `Symbol` variable for injection of dynamic content.
@@ -107,8 +98,7 @@ const helloWorld = ["Saluton, Mondo!", "Hello, World!"];
 
 const greetings = ul({ id: "greetings" })(
   helloWorld.map(
-    (greeting: string, index: number) =>
-      li({ id: `greeting-${index}` })(greeting)
+    (greeting: string, index: number) => li({ id: `greeting-${index}` })(greeting)
     // This is an HTML `li` element. ⮵
     // Each `li` element will contain its respective `id` attribute.
   )
@@ -169,10 +159,7 @@ The final render step, invoked using `template.render`, involves a single pass o
 
 ```ts
 const template: Template = doctype()(
-  html()(
-    head()(),
-    body()(main({ id: "main-content" })($greetings), footer({ id: "footer" })())
-  )
+  html()(head()(), body()(main({ id: "main-content" })($greetings), footer({ id: "footer" })()))
 );
 ```
 
@@ -197,9 +184,7 @@ const my_custom_element = $.bind(null, "my-custom-element");
 #### Render the custom element with the class name `custom-element` and content "Hello, World!" and log it to the console.
 
 ```ts
-console.log(
-  my_custom_element({ class: "custom-element" })("Hello, World!").render()
-);
+console.log(my_custom_element({ class: "custom-element" })("Hello, World!").render());
 ```
 
 ##### Output
@@ -256,10 +241,7 @@ const $style_sheet = Symbol("style_sheet");
 const template: Template = doctype()(
   html()(
     head()($title, $style_sheet, $script, $inline_script),
-    body()(
-      main({ id: "main-content" })($main_content),
-      footer({ id: "footer" })()
-    )
+    body()(main({ id: "main-content" })($main_content), footer({ id: "footer" })())
   )
 );
 ```

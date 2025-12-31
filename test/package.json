@@ -8,7 +8,7 @@
     "clean": "rm -rf ./dist/*",
     "clean:build": "npm run clean && npm run build",
     "start": "node --expose-gc .",
-    "clean:build:start" : "npm run clean:build && npm start",
+    "clean:build:start": "npm run clean:build && npm start",
     "monitor": "nodemon ."
   },
   "author": "FAR",
