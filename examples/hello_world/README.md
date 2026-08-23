@@ -4,14 +4,14 @@ This example demonstrates various patterns that are supported by the JS HTML Ren
 
 ## Implementation
 
-Please see the main [README.md](https://github.com/far-analytics/js-html-renderer) for an explanation of the implementation.
+Please see the main [README.md](https://github.com/adamjpatterson/js-html-renderer) for an explanation of the implementation.
 
 ### Instructions
 
 #### Clone the JS HTML Renderer repo.
 
 ```bash
-git clone https://github.com/far-analytics/js-html-renderer.git
+git clone https://github.com/adamjpatterson/js-html-renderer.git
 ```
 
 #### Change directory into the relevant example directory.
