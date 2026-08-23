@@ -1,12 +1,15 @@
 {
   "name": "hello_world",
   "version": "1.0.0",
-  "description": "",
+  "description": "Example - Hello, World!",
   "main": "./dist/index.js",
   "scripts": {
     "build": "tsc --build .",
     "clean": "rm -rf ./dist/*",
     "clean:build": "npm run clean && npm run build",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:lint": "npm run format && npm run lint",
     "start": "node .",
     "monitor": "nodemon ."
   },
@@ -17,12 +20,20 @@
     "node": ">=18.19.0"
   },
   "dependencies": {
-    "js-html-renderer": "0.0.3"
+    "js-html-renderer": "^1.0.0"
   },
   "type": "module",
   "devDependencies": {
+    "@eslint/js": "^9.37.0",
+    "@stylistic/eslint-plugin": "^5.4.0",
     "@types/web": "^0.0.139",
-    "@types/node": "^20.6.2",
-    "typescript": "^5.1.6"
-  }
+    "@types/node": "^20.11.28",
+    "eslint": "^9.38.0",
+    "globals": "^16.4.0",
+    "nodemon": "^3.1.9",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.1"
+  },
+  "private": true
 }
