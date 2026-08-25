@@ -1,6 +1,6 @@
 {
   "name": "js-html-renderer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A JavaScript DSL for rendering HTML on the client or server.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
