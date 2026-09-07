@@ -23,7 +23,7 @@ cd js-html-renderer/examples/hello_world
 #### Install the example dependencies.
 
 ```bash
-npm install && npm update
+npm install
 ```
 
 #### Build the application.
